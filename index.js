@@ -17,3 +17,18 @@ function removeElemet(arr,val){
 let removeData = [2,4,3,6,5,1];
  let rmVal = 4
 console.log(removeElemet(removeData,rmVal))
+
+// remove duplicate
+function removeDuplicate(arr){
+    let result = []
+
+    arr.forEach(element => {
+       if(!result.includes(element)){
+        result.push(element)
+       }
+    });
+    return result
+}
+let removeDuplicateData = [1,2,4,6,8,3,1,2]
+
+console.log(removeDuplicate(removeDuplicateData))
