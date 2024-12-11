@@ -10,3 +10,6 @@
 # reverse string
 # factorial
 # merge & sort
+# flatten array
+# remove duplicate obj
+# groupby subject

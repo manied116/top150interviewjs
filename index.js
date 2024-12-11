@@ -169,3 +169,59 @@ function mergeAndSort(arr1,arr2){
 const mergeArr1 = [1, 3, 5, 7];
 const mergeArr2 = [2, 4, 6, 8];
 console.log(mergeAndSort(mergeArr1, mergeArr2));
+
+// flatten array
+function flattenData(arr){
+    let result = [];
+
+    arr.forEach((item)=>{
+        if(Array.isArray(item)){
+            result = result.concat(flattenData(item))
+        }else{
+            result.push(item)
+        }
+    })
+    return result
+}
+console.log(flattenData([2,[1,3,5],[4,6]]))
+
+
+// remove duplicate object
+function removeDuplicateObj(arr){
+    return arr.reduce((acc, item) => {
+        if (!acc.some(obj => obj["id"] === item["id"])) {
+          acc.push(item);
+        }
+        return acc;
+      }, []);
+}
+
+const data = [
+    { id: 1, name: 'John' },
+    { id: 2, name: 'Jane' },
+    { id: 1, name: 'John' },
+    { id: 3, name: 'Mike' }
+  ];
+
+console.log(removeDuplicateObj(data))
+
+// groupby subject
+function groupBySubject(arr) {
+    return arr.reduce((acc, item) => {
+      // If the subject doesn't exist in the accumulator, add it as an empty array
+      if (!acc[item.subject]) {
+        acc[item.subject] = [];
+      }
+      // Push the item to the correct subject group
+      acc[item.subject].push(item);
+      return acc;
+    }, {});
+  }
+  const groupData = [
+    { name: 'John' ,subject:"English"},
+    { name: 'Jane' ,subject:"Maths"},
+    { name: 'John1' ,subject:"English"},
+    { name: 'Mike' ,subject:"Maths"},
+    { name: 'Michel' ,subject:"Science"}
+  ];
+  console.log(groupBySubject(groupData));
