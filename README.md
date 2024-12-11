@@ -4,3 +4,9 @@
 # Remove Duplicate
 # Change first letter capital
 # Check valid bracket
+# split the array based on the size
+# find longest word
+# check palindrome
+# reverse string
+# factorial
+# merge & sort
