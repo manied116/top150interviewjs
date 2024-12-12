@@ -13,3 +13,4 @@
 # flatten array
 # remove duplicate obj
 # groupby subject
+# rotate array with index

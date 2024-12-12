@@ -225,3 +225,13 @@ function groupBySubject(arr) {
     { name: 'Michel' ,subject:"Science"}
   ];
   console.log(groupBySubject(groupData));
+
+//  rotate array with index
+function rotateArray(array, index) {
+    if (index < 0 || index >= array.length) {
+        console.log("Index out of bounds");
+    }
+    return [...array.slice(index), ...array.slice(0, index)];
+}
+
+console.log(rotateArray([1, 2, 3, 4, 5], 3));
