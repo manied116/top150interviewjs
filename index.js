@@ -235,3 +235,16 @@ function rotateArray(array, index) {
 }
 
 console.log(rotateArray([1, 2, 3, 4, 5], 3));
+// find 2nd largest
+function secondLargest(array) {
+    if (array.length < 2) {
+        throw new Error("Array must contain at least two elements");
+    }
+
+    const sortedArray = [...new Set(array)].sort((a, b) => b - a);
+    return sortedArray[1];
+}
+
+// Example usage
+const arr = [5, 3, 9, 7, 9];
+console.log(secondLargest(arr)); // Output: 7
