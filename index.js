@@ -133,7 +133,7 @@ function calculateFactorial(num){
     }
     return num * calculateFactorial(num-1)
 }
-console.log(calculateFactorial(5))
+console.log(calculateFactorial(0))
 
 // merge & sort
 function mergeAndSort(arr1,arr2){
@@ -248,3 +248,70 @@ function secondLargest(array) {
 // Example usage
 const arr = [5, 3, 9, 7, 9];
 console.log(secondLargest(arr)); // Output: 7
+
+// --------------------oops concept -------------------------
+// encapsulation
+class car{
+    constructor(brand,modal){
+        this.brand = brand
+        this.modal = modal
+    }
+    
+    getBrand(){
+        return this.brand
+    }
+    
+    setBrand(newBrand){
+        this.brand = newBrand
+    }
+}
+
+let Car = new car("Toyoto","etios")
+console.log(Car.brand)
+console.log(Car.getBrand())
+Car.setBrand("Corolla")
+console.log(Car.getBrand())
+
+// abstraction
+class Employee{
+    constructor(name, salary) {
+    this.name = name;
+    let _salary = salary; // Private variable (closure)
+
+    // Private method
+    const calculateTax = () => _salary * 0.2;
+
+    this.getNetSalary = () => _salary - calculateTax();
+  }
+    
+    getName(){
+        return this.name
+    }
+}
+
+let employee = new Employee("MK",4000)
+console.log(employee.getName())
+console.log(employee.getNetSalary())
+
+// inheritance
+class Animal{
+    constructor(name){
+        this.name = name
+    }
+    
+    speak(){
+        console.log(`${this.name} is good animal`)
+    }
+}
+
+class Dog extends Animal{
+    
+    speak(){
+        console.log(`${this.name} sound is low`)
+    }
+}
+
+let animal = new Animal("Dog")
+let dog = new Dog("tiger")
+animal.speak()
+dog.speak()
