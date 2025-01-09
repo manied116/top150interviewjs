@@ -315,3 +315,55 @@ let animal = new Animal("Dog")
 let dog = new Dog("tiger")
 animal.speak()
 dog.speak()
+
+// FIZZBUZZ
+
+function fizzbuzz(n){
+    for(let i=1; i <=n; i++){
+        if(i % 3 ===0 && i % 5 === 0){
+            console.log("FIZZBUZZ")
+        }else 
+        if(i % 3 === 0){
+            console.log("FIZZ")
+        }else 
+        if(i % 5 === 0){
+            console.log("BUZZ")
+        }else{
+            console.log(i)
+        }
+    }
+}
+
+fizzbuzz(10)
+
+// MISSING NUMBER
+function missingNumber(nums){
+    const n = nums.length;
+    const total = (n * (n + 1)) / 2;
+    const sum = nums.reduce((acc, num) => acc + num, 0);
+    return total - sum;
+}
+
+console.log(missingNumber([4,2,1]))
+
+// build tree data
+const treeData = [
+    { id: 1, parentId: null, name: "test1" },
+    { id: 2, parentId: 1, name: "test2" },
+    { id: 3, parentId: 1, name: "test3" },
+    { id: 4, parentId: 2, name: "test4" },
+    { id: 5, parentId: 2, name: "test5" },
+    { id: 6, parentId: 3, name: "test6" },
+];
+
+function buildTree(data, parentId = null) {
+    return data
+        .filter(item => item.parentId === parentId)
+        .map(item => ({
+            ...item,
+            children: buildTree(data, item.id),
+        }));
+}
+
+const result = buildTree(treeData);
+console.log(JSON.stringify(result, null, 2));

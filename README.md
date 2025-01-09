@@ -14,3 +14,10 @@
 # remove duplicate obj
 # groupby subject
 # rotate array with index
+# find 2nd largest
+# encapsulation   
+# abstraction     
+# inheritance     
+# fizzbuzz        
+# missing number  
+# build tree data 
